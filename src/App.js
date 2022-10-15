@@ -23,12 +23,13 @@ function App() {
   const toggleMode = () => {
     if (mode === "dark") {
       setMode("light");
-
+      document.querySelector('.form-check-label').textContent = "Enable Dark Mode";
       document.body.style.backgroundColor = "white";
       showAlert("LightMode Enabled", "success");
     } else {
       setMode("dark");
       document.body.style.backgroundColor = "#1C2833  ";
+      document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
       showAlert("DarkMode Enabled", "success");
       // document.title=('TextUtils - DarkMode');
     }
