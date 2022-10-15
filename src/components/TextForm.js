@@ -43,9 +43,25 @@ export default function TextForm(props) {
 
         setText(event.target.value);
     }
+    const searchChange=(event)=>{
+      const temp=event.target.value;
+      setSearch(temp.trim());
+    }
+    const renderRes=(search)=>{
+      const check=search.trim();
+      if(check.length!==0){
+        const filterSearch=text.split(" ");
+        const res=filterSearch.filter((x)=>{return x===search})
+        
+        return(<p>"{search}" Occurrences: {res.length}</p>)
+      }
+      
+    }
 
     // Declare a new state variable, which we'll call "text"
  const [text, setText] = useState("");
+ const [search,setSearch]=useState("");
+
 
   const handleClear = () => {
     setText("");
@@ -68,7 +84,6 @@ export default function TextForm(props) {
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
   <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
 </div> */}
-
         <div className="mb-3">
           <h1>{props.heading}</h1>
           {/* <label for="exampleFormControlTextarea1" className="form-label">Enter the text here</label> */}
@@ -79,6 +94,7 @@ export default function TextForm(props) {
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
 
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
+        <input class="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
 
 
       </div>
@@ -86,6 +102,7 @@ export default function TextForm(props) {
         <h2>Your Text Summary</h2>
         <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} Characters</p>
         <p>{0.08 * text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Minutes Read</p>
+        {renderRes(search)}
 
         <h2>Preview</h2>
         <p>{text.length > 0 ? text : 'Write something in above text box to preview'}</p>
@@ -94,4 +111,7 @@ export default function TextForm(props) {
     </>
   )
 
-}
+
+
+</>
+    )
