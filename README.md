@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/74503582/196006407-6846425d-dfbc-4ab8-9036-2a857c1d0ef6.png)
+
 #  HacktoberFest is here!!
 
 Use this repository to make your first and easy contribution to open source world. Create and easy pull request by following the steps given below.
@@ -17,21 +19,31 @@ A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](ht
 [https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
 
 
-## How Contribute to This Project
-Here is a simple way to contribut to the project.
+![image](https://user-images.githubusercontent.com/74503582/196006438-5841c132-d490-48ee-8cc7-995dd139a0fd.png)
 
 
-## Getting Started
+## How Contribute to This Project 🚀
+Here is a simple way to contribut to the project. 👇
+
+
+## _Setting up the Project Locally_ 💻
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone your fork down to your local machine
-```markdown
-git clone <url> (given in clone or download button)
+(Given in clone or download button)
+```sh
+git clone https://github.com/YOUR-GITHUB_USERNAME/text-magic
 ```
-* Run in your localhost
-```markdown
+* Change the Directory
+```sh
+cd text-magic
+```
+* Install Dependencies
+```sh
 npm install
 ```
-```markdown
+
+* Start the Project, the project is now visible at http://localhost:3000/
+```sh
 npm start
 ```
 
