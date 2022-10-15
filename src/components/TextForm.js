@@ -62,6 +62,7 @@ export default function TextForm(props) {
  const [text, setText] = useState("");
  const [search,setSearch]=useState("");
 
+
   const handleClear = () => {
     setText("");
   }
@@ -83,7 +84,6 @@ export default function TextForm(props) {
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
   <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
 </div> */}
-
         <div className="mb-3">
           <h1>{props.heading}</h1>
           {/* <label for="exampleFormControlTextarea1" className="form-label">Enter the text here</label> */}
@@ -111,4 +111,7 @@ export default function TextForm(props) {
     </>
   )
 
-}
+
+
+</>
+    )

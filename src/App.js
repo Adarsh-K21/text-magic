@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+import Footer from "./components/Footer.js";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 import About from "./components/About";
@@ -58,7 +59,9 @@ function App() {
               />
             </Route>
           </Switch>
+
         </div>
+        <Footer />
       </Router>
     </>
   );
