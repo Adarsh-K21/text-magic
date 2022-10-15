@@ -47,6 +47,15 @@ export default function TextForm(props) {
     // Declare a new state variable, which we'll call "text"
  const [text, setText] = useState("");
 
+
+  const handleClear = () => {
+    setText("");
+  }
+
+  // Declare a new state variable, which we'll call "text"
+  // const [text, setText] = useState("");
+
+
 //  text ='new text';   wrong way to change the state
 
 //  setText('new text');   //right way to change the state
