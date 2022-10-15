@@ -20,10 +20,23 @@ function App() {
     }, 1000);
   };
 
+  const toggleMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+
+      document.body.style.backgroundColor = "white";
+      showAlert("LightMode Enabled", "success");
+    } else {
+      setMode("dark");
+      document.body.style.backgroundColor = "#1C2833  ";
+      showAlert("DarkMode Enabled", "success");
+      // document.title=('TextUtils - DarkMode');
+    }
+  };
   return (
     <>
       <Router>
-        <Navbar title="TextMagic" mode={mode} />
+        <Navbar title="TextMagic" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
         <div className="container my-3">
