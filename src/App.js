@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
+  const [text,setText]=useState("Enable DarkMode");
+
+ 
 
   const showAlert = (message, type) => {
     setAlert({
@@ -23,11 +26,12 @@ function App() {
   const toggleMode = () => {
     if (mode === "dark") {
       setMode("light");
-      document.querySelector('.form-check-label').textContent = "Enable Dark Mode";
+
       document.body.style.backgroundColor = "white";
       showAlert("LightMode Enabled", "success");
     } else {
       setMode("dark");
+      setText("Disable DarkMode");
       document.body.style.backgroundColor = "#1C2833  ";
       document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
       showAlert("DarkMode Enabled", "success");
@@ -37,7 +41,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="TextMagic" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextMagic" mode={mode} text={text} toggleMode={toggleMode} />
         <Alert alert={alert} />
 
         <div className="container my-3">
