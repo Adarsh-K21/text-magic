@@ -1,44 +1,51 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
-
+ 
 
 export default function TextForm(props) {
 
-  document.title = ('TextMagic - Home');
+    document.title=('TextMagic - Home');
 
-  const handleUpClick = () => {
+    const handleUpClick= ()=> {
 
-    // console.log('Uppercase clicked'+ text);
-    let newText = text.toUpperCase();
-    setText(newText);
+        // console.log('Uppercase clicked'+ text);
+        let newText = text.toUpperCase();
+        setText(newText);
 
-    props.showAlert("Changed to Uppercase", "success");
-  }
-  const handleLowClick = () => {
+        props.showAlert("Changed to Uppercase","success");
+    }
+    const handleLowClick= ()=> {
 
-    // console.log('Uppercase clicked'+ text);
-    let newText = text.toLowerCase();
-    setText(newText);
-    props.showAlert("Changed to Lowercase", "success");
-  }
-  const handleClearClick = () => {
+        // console.log('Uppercase clicked'+ text);
+        let newText = text.toLowerCase();
+        setText(newText);
+        props.showAlert("Changed to Lowercase","success");
+    }
+    const handleClearClick= ()=> {
 
-    // console.log('Uppercase clicked'+ text);
-    let newText = "";
-    setText(newText);
-    props.showAlert("Text Cleared", "success");
-  }
-  const handleCopy = () => {
+        // console.log('Uppercase clicked'+ text);
+        let newText ="";
+        setText(newText);
+        props.showAlert("Text Cleared","success");
+    }
+    const handleCopy=()=>{
+        
+        navigator.clipboard.writeText(text);
+        props.showAlert("Text Copied","success");
+    }
+    const handleExtraSpace=()=>{
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("Extra space removed","success");
+    }
 
-    navigator.clipboard.writeText(text);
-    props.showAlert("Text Copied", "success");
-  }
+    const handleOnChange= (event)=> {
 
+        setText(event.target.value);
+    }
 
-  const handleOnChange = (event) => {
-
-    setText(event.target.value);
-  }
+    // Declare a new state variable, which we'll call "text"
+ const [text, setText] = useState("");
 
   const handleClear = () => {
     setText("");
@@ -47,15 +54,16 @@ export default function TextForm(props) {
   // Declare a new state variable, which we'll call "text"
   const [text, setText] = useState("");
 
-  //  text ='new text';   wrong way to change the state
 
-  //  setText('new text');   //right way to change the state
+//  text ='new text';   wrong way to change the state
+
+//  setText('new text');   //right way to change the state
 
 
 
-  return (
-    <>
-      <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+    return (
+        <>
+    <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
         {/* <div className="mb-3">
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
   <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
@@ -85,4 +93,5 @@ export default function TextForm(props) {
 
     </>
   )
+
 }
