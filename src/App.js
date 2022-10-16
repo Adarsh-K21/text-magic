@@ -24,11 +24,12 @@ function App() {
     }, 1000);
   };
 
-  const toggleMode = () => {
-    if (mode === "dark") {
+  const toggleMode = (displayMode) => {
+    if (displayMode === "light") {
       setMode("light");
 
       document.body.style.backgroundColor = "white";
+      setText("Disable LightMode");
       showAlert("LightMode Enabled", "success");
     } else {
       setMode("dark");

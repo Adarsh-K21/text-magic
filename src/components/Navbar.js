@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
+  // display mode handler
+  const displayModeHandler = () => {
+    let mode = props.mode === "light" ? "dark" : "light";
+    props.toggleMode(mode);
+  }
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
@@ -48,7 +53,7 @@ export default function Navbar(props) {
               className="form-check-input"
               type="checkbox"
               role="switch"
-              onClick={props.toggleMode}
+              onClick={displayModeHandler}
               id="flexSwitchCheckDefault"
             />
             <label
