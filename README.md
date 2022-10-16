@@ -1,3 +1,7 @@
+
+[![Hacktoberfest](./public/hacktoberfest.png)](https://hacktoberfest.com/)
+
+
 #  HacktoberFest is here!!
 
 Use this repository to make your first and easy contribution to open source world. Create and easy pull request by following the steps given below.
@@ -17,27 +21,31 @@ A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](ht
 [https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
 
 
-## How Contribute to This Project
-Here is a simple way to contribut to the project.
+
+## How Contribute to This Project 🔥
+[![Text-Magic](./public/text-magic.png)](https://elegant-nougat-679432.netlify.app/)
 
 
-## Getting Started
+Here is a simple way to contribut to the project. 👇
+
+
+## Getting Started 💻
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone your fork down to your local machine
-```markdown
+```sh
 git clone <url> (given in clone or download button)
 ```
 * Run in your localhost
-```markdown
+```sh
 npm install
 ```
-```markdown
+```sh
 npm start
 ```
 
 * Make your changes (Choose from any task below)
 * Commit and Push
-```markdown
+```sh
 git add .
 git commit -m 'commit message'
 go to your forked project and Sync fork
@@ -45,6 +53,11 @@ git pull origin branch-name(main/master)
 git push origin branch-name(main/master)
 ```
 * Create a New Pull Request from your forked repository (Click the New Pull Request button located at the top of your repo)
+
+* **Make sure you, Provide a Detailed Description while making a Pull Request** e.g.
+1.  Old Changes, why you want new changes.
+2. Screen Shot of new changes , explaining their feature.
+
 * Wait for your PR review and merge approval!
 * __Star this repository__ for higher chance of merge approval!
 
