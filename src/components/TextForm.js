@@ -47,6 +47,16 @@ export default function TextForm(props) {
       const temp=event.target.value;
       setSearch(temp.trim());
     }
+    const handleDownload = () => {
+      const element = document.createElement("a");
+      const file = new Blob([text], {
+        type: "text/plain"
+      });
+      element.href = URL.createObjectURL(file);
+      element.download = "textMagic.txt";
+      document.body.appendChild(element);
+      element.click();
+    };
     const renderRes=(search)=>{
       const check=search.trim();
       if(check.length!==0){
@@ -94,6 +104,7 @@ export default function TextForm(props) {
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
 
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
+        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleDownload}>Download as Text</button>
         <input class="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
 
 
@@ -112,6 +123,4 @@ export default function TextForm(props) {
   )
 
 
-
-</>
-    )
+}
