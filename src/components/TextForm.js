@@ -21,6 +21,13 @@ export default function TextForm(props) {
         setText(newText);
         props.showAlert("Changed to Lowercase","success");
     }
+    const handleReverse= ()=> {
+
+      setText(text.split("").reverse().join(""));
+      props.showAlert("Reversed","success");
+
+    }
+    
     const handleClearClick= ()=> {
 
         // console.log('Uppercase clicked'+ text);
@@ -91,8 +98,8 @@ export default function TextForm(props) {
         </div>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}  >Convert to UpperCase</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleReverse}>Reverse</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
-
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
         <input class="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
 
@@ -110,8 +117,4 @@ export default function TextForm(props) {
 
     </>
   )
-
-
-
-</>
-    )
+}
