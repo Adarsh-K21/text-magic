@@ -21,6 +21,18 @@ export default function TextForm(props) {
         setText(newText);
         props.showAlert("Changed to Lowercase","success");
     }
+
+    const handleTitleClick= ()=> {
+
+      var newText = text.toLowerCase().split(' ');
+      for (var i = 0; i < newText.length; i++) {
+          newText[i] = newText[i].charAt(0).toUpperCase() + newText[i].slice(1);
+      }
+      newText = newText.join(" ");
+      setText(newText);
+      props.showAlert("Changed to Titlecase","success");
+  }
+
     const handleClearClick= ()=> {
 
         // console.log('Uppercase clicked'+ text);
@@ -108,6 +120,7 @@ export default function TextForm(props) {
         </div>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}  >Convert to UpperCase</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleTitleClick}>Convert to Titlecase</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleReverse}>Reverse</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
