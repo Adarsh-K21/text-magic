@@ -105,7 +105,7 @@ export default function TextForm(props) {
 
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
         <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleDownload}>Download as Text</button>
-        <input class="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
+        <input className="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
 
 
       </div>
