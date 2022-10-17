@@ -6,7 +6,8 @@ import React, { useState } from "react";
 import Alert from "./components/Alert";
 import About from "./components/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import sunpng from './images/sun.png';
+import moonpng from './images/moon.png';
 function App() {
   const [mode, setMode] = useState("light");
   const [alert, setAlert] = useState(null);
@@ -27,14 +28,15 @@ function App() {
   const toggleMode = () => {
     if (mode === "dark") {
       setMode("light");
-
+      document.querySelector('#darkModeBtn').src = moonpng;
       document.body.style.backgroundColor = "white";
       showAlert("LightMode Enabled", "success");
     } else {
       setMode("dark");
       setText("Disable DarkMode");
       document.body.style.backgroundColor = "#1C2833  ";
-      document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
+      document.querySelector('#darkModeBtn').src = sunpng;
+      // document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
       showAlert("DarkMode Enabled", "success");
       // document.title=('TextUtils - DarkMode');
     }
