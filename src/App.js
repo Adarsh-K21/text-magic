@@ -30,14 +30,12 @@ function App() {
       setMode("light");
       document.querySelector('#darkModeBtn').src = moonpng;
       document.body.style.backgroundColor = "white";
-      showAlert("LightMode Enabled", "success");
     } else {
       setMode("dark");
       setText("Disable DarkMode");
       document.body.style.backgroundColor = "#1C2833  ";
       document.querySelector('#darkModeBtn').src = sunpng;
       // document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
-      showAlert("DarkMode Enabled", "success");
       // document.title=('TextUtils - DarkMode');
     }
   };
@@ -45,7 +43,6 @@ function App() {
     <>
       <Router>
         <Navbar title="TextMagic" mode={mode} text={text} toggleMode={toggleMode} />
-        <Alert alert={alert} />
 
         <div className="container my-3">
           <Switch>
@@ -54,6 +51,10 @@ function App() {
             </Route>
 
             <Route exact path="/">
+              <p className="container">
+              Best tool on Internet for manipulating your text, You an convert your text in any form i.e. Upper Case, Lower Case, Reverse and Many more with just a click.
+              </p>
+
               <TextForm
                 showAlert={showAlert}
                 heading="Enter the text to analyze"
