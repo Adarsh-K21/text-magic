@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import sunpng from './images/sun.png';
 import moonpng from './images/moon.png';
 function App() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   const [alert, setAlert] = useState(null);
   const [text,setText]=useState("Enable DarkMode");
 
@@ -26,19 +26,22 @@ function App() {
   };
 
   const toggleMode = () => {
-    if (mode === "dark") {
-      setMode("light");
-      document.querySelector('#darkModeBtn').src = moonpng;
-      document.body.style.backgroundColor = "white";
-    } else {
+    if (mode === "light") {
       setMode("dark");
-      setText("Disable DarkMode");
-      document.body.style.backgroundColor = "#1C2833  ";
       document.querySelector('#darkModeBtn').src = sunpng;
+      document.body.style.backgroundColor = "#1C2833";
+    } else {
+      
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+      document.querySelector('#darkModeBtn').src = moonpng;
       // document.querySelector('.form-check-label').textContent = "Disable Dark Mode";
       // document.title=('TextUtils - DarkMode');
     }
   };
+
+  
+
   return (
     <>
       <Router>

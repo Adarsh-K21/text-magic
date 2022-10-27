@@ -11,7 +11,7 @@ export default function Navbar(props) {
     >
       <div className="container">
         <Link className="navbar-brand fs-1 " to="/">
-          {props.title} ✨
+          <h2 className="heading-icon">{props.title}</h2>
         </Link>
         <div className="" id="navbarSupportedContent">
 
@@ -21,23 +21,9 @@ export default function Navbar(props) {
               props.mode === "light" ? "dark" : "light"
             }`}
           >
-            <img src={moonpng} alt="" width="50px" height="50px" id="darkModeBtn" 
+            <img src={sunpng} alt="" width="50px" height="50px" id="darkModeBtn" 
             onClick={props.toggleMode}
             />
-
-            {/* <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              onClick={props.toggleMode}
-              id="flexSwitchCheckDefault"
-            />
-            <label
-              className="form-check-label"
-              htmlFor="flexSwitchCheckDefault"
-            >
-              {props.text}
-            </label> */}
           </div>
         </div>
       </div>

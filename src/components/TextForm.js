@@ -109,26 +109,30 @@ export default function TextForm(props) {
     return (
         <>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
-        {/* <div className="mb-3">
-  <label for="exampleFormControlInput1" className="form-label">Email address</label>
-  <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-</div> */}
+
         <div className="mb-3">
           <h1>{props.heading}</h1>
-          {/* <label for="exampleFormControlTextarea1" className="form-label">Enter the text here</label> */}
-          <textarea className="form-control" id="myBox" value={text} style={{ backgroundColor: props.mode === 'dark' ? '#34495E' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handleOnChange} rows="10"></textarea>
+          <textarea placeholder='Enter the text to modify' className="form-control" id="myBox" value={text} style={{ backgroundColor: props.mode === 'dark' ? '#34495E' : 'white', border: props.mode==='dark'?"none":"1px solid" ,  color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handleOnChange} rows="10"></textarea>
         </div>
-        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}  >Convert to UpperCase</button>
-        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
-        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleTitleClick}>Convert to Titlecase</button>
-        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleReverse}>Reverse</button>
-        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy Text</button>
-        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleClear}>Clear Text</button>
-        <button disabled={text.length === 0} className='btn btn-primary mx-2 my-1' onClick={handleDownload}>Download as Text</button>
-        <input class="rounded mx-2 my-1 border border-secondary" type="search" placeholder="Search" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
 
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}  >Convert to <b>UPPERCASE</b></button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>Convert to <b>lowercase</b></button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleTitleClick}>Convert to <b>Title Case</b></button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleReverse}>Reverse</button>
+
+
+        {/* spl buttons */}
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" disabled={text.length === 0} className="btn btn-success" onClick={handleCopy}><i class="fa-solid fa-copy"></i></button>
+            <button  type="button" disabled={text.length === 0} className='btn btn-danger' onClick={handleClear}><i  class="fa-solid fa-trash"></i></button>
+            <button type="button" disabled={text.length === 0} className='btn btn-info' onClick={handleDownload}><i class="fa-solid fa-download"></i></button>
+        </div>
 
       </div>
+
+              
+      <input class="rounded mx-2 p-2 px-3" type="search" placeholder="Search the Occurrences" aria-label="Search" style={{height:"38px"}} onChange={searchChange}/>
+
       <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2>Your Text Summary</h2>
         <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length} Characters</p>
