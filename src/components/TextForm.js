@@ -32,6 +32,10 @@ export default function TextForm(props) {
       setText(newText);
       props.showAlert("Changed to Titlecase","success");
   }
+  const handleRemove=()=>{
+    let newText=text.split(/[ ]+/)
+    setText(newText.join(" "));
+ }
 
     const handleClearClick= ()=> {
 
@@ -118,6 +122,7 @@ export default function TextForm(props) {
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}  >Convert to <b>UPPERCASE</b></button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>Convert to <b>lowercase</b></button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleTitleClick}>Convert to <b>Title Case</b></button>
+        <button className='btn btn-primary my-1 mx-1' onClick={handleRemove}>Remove Extra Space</button>
         <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleReverse}>Reverse</button>
 
 
