@@ -115,7 +115,7 @@ export default function TextForm(props) {
           <textarea placeholder='Enter the text to modify' className="form-control" id="myBox" style={{ backgroundColor: props.mode === 'dark' ? '#34495E' : 'white', border: props.mode === 'dark' ? "none" : "1px solid", color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handleOnChange} rows="10"></textarea>
         </div>
 
-
+        {/* Results */}
         <div className="mb-3">
           <h1>Results</h1>
           <textarea placeholder='Results will be displayed here' className="form-control" id="myBox" value={text} disabled style={{ backgroundColor: props.mode === 'dark' ? '#34495E' : 'white', border: props.mode === 'dark' ? "none" : "1px solid", color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handleOnChange} rows="10"></textarea>
